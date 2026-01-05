@@ -12,7 +12,7 @@ const ibmPlexSerif = IBM_Plex_Serif({
 
 export const metadata: Metadata = {
   title: "Banco Ceiba",
-  description: "Ceiba, la solidez que te impulsa.",
+  description: "Banco Ceiba, la solidez que te impulsa.",
   icons: {
     icon: "/icons/leaf.svg"
   }
