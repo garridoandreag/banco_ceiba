@@ -1,7 +1,9 @@
 /* eslint-disable no-prototype-builtins */
 import { type ClassValue, clsx } from "clsx";
+import { Fira_Code } from "next/font/google";
 import qs from "query-string";
 import { twMerge } from "tailwind-merge";
+import z from "zod";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -193,3 +195,19 @@ export const getTransactionStatus = (date: Date) => {
 
   return date > twoDaysAgo ? "Processing" : "Success";
 };
+
+export const authFormSchema = z.object({
+  username: z.string().min(5, {
+    message: "Usuario debe tener al menos 5 caracteres.",
+  }),
+  password: z.string().min(8, {
+    message: "Contraseña debe tener al menos 8 caracteres.",
+  }),
+  firstName: z.string().min(5, {
+    message: "Usuario debe tener al menos 5 caracteres.",
+  }),
+  lastName: z.string().min(8, {
+    message: "Contraseña debe tener al menos 8 caracteres.",
+  }),
+  
+});
